@@ -6,6 +6,8 @@ const Contact = () => {
   // setted env while deploying, for local just make a constants file and import these constants from this file
   const { SERVICE_ID, TEMPLATE_ID, USER_ID, GITHUB_URL, LINKED_URL } = process.env
 
+  console.log(process.env)
+  
   const [formData, setFormData] = useState({})
 
   const [ response, setResponse ] = useState({})
