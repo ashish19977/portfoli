@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 
 import emailjs from 'emailjs-com';
-import { SERVICE_ID, TEMPLATE_ID, USER_ID, GITHUB_URL, LINKED_URL } from '../Constants'
 
 const Contact = () => {
+  // setted env while deploying, for local just make a constants file and import these constants from this file
+  const { SERVICE_ID, TEMPLATE_ID, USER_ID, GITHUB_URL, LINKED_URL } = process.env
 
   const [formData, setFormData] = useState({})
 
