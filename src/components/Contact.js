@@ -3,11 +3,9 @@ import React, { useState } from 'react'
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
-  // setted env while deploying, for local just make a constants file and import these constants from this file
-  const { SERVICE_ID, TEMPLATE_ID, USER_ID, GITHUB_URL, LINKED_URL } = process.env
+  // create a .env file and define ur env vars
+  const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_USER_ID, REACT_APP_GITHUB_URL, REACT_APP_LINKED_URL } = process.env
 
-  console.log(process.env)
-  
   const [formData, setFormData] = useState({})
 
   const [ response, setResponse ] = useState({})
@@ -20,7 +18,7 @@ const Contact = () => {
 
     setResponse({ loading: true })
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
+    emailjs.send(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, formData, REACT_APP_USER_ID)
     .then(result => {
       setResponse({loading: false})
       setFormData({})
@@ -39,48 +37,49 @@ const Contact = () => {
   }
 
   const goToGithub = () => {
-    window.location.href = GITHUB_URL
+    window.location.href = REACT_APP_GITHUB_URL
   }
 
 
   const goToLInkedIn = () => {
-    window.location.href = LINKED_URL
+    window.location.href = REACT_APP_LINKED_URL
   }
 
   return(
-    <div className="h-auto w-full md:w-6/12 px-2 mt-7 mb-2 md:mt-0  mx-auto flex flex-col justify-center" id="contact">
-      <h1 className="md:text-5xl text-3xl font-mono text-green-600 my-5 text-center">Contact Me</h1>
-      <input 
-        type="email"
-        placeholder="Your email here" 
-        className="p-2 shadow-2xl ring-1 ring-green-500 rounded"
-        onChange={e => setFormData({...formData, sender: e.target.value})}
-      />
-      <textarea 
-        type="text"
-        placeholder="Message for me" 
-        className="px-2 mt-3 mb-4 shadow-2xl ring-1 ring-green-500 rounded"
-        onChange={e => setFormData({...formData, message: e.target.value})}
-      >
-      </textarea>
-      <button 
-        onClick={sendEmail}
-        className="ring-2 ring-green-600 py-3 rounded px-10 text-green-600 hover:bg-green-600 hover:text-white mt-2 mb-1"
-      >
-        { response.loading && !response.error ? 'Sending...' : 'Send' }
-      </button>
+    <div className="bg-gray-200 md:pt-7 pb-3">
+      <div className="h-auto w-full md:w-6/12 px-2 md:mt-0  mx-auto flex flex-col justify-center" id="contact">
+        <h1 className="md:text-5xl text-3xl font-mono text-green-600 my-5 text-center">Contact Me</h1>
+        <input 
+          type="email"
+          placeholder="Your email here" 
+          className="p-2 shadow-2xl ring-1 ring-green-500 rounded"
+          onChange={e => setFormData({...formData, sender: e.target.value})}
+        />
+        <textarea 
+          type="text"
+          placeholder="Message for me" 
+          className="px-2 mt-3 mb-4 shadow-2xl ring-1 ring-green-500 rounded"
+          onChange={e => setFormData({...formData, message: e.target.value})}
+        >
+        </textarea>
+        <button 
+          onClick={sendEmail}
+          className="ring-2 ring-green-600 py-3 rounded px-10 text-green-600 hover:bg-green-600 hover:text-white mt-2 mb-1"
+        >
+          { response.loading && !response.error ? 'Sending...' : 'Send' }
+        </button>
 
-      {
-        alertConfig.show &&
-        <p className={`p-1 py-2 text-center my-3 rounded ${alertConfig.bgClass}`}>{ alertConfig.message }</p>
-      }
+        {
+          alertConfig.show &&
+          <p className={`p-1 py-2 text-center my-3 rounded ${alertConfig.bgClass}`}>{ alertConfig.message }</p>
+        }
 
-      <div className="flex justify-center items-center mt-5">
-        <img onClick={goToGithub} src="https://img.icons8.com/bubbles/60/000000/github.png" alt="github" className="mx-5"/>
-        <img onClick={goToLInkedIn} src="https://img.icons8.com/bubbles/60/000000/linkedin.png" alt="linkedin" className="mx-5"/>
+        <div className="flex justify-center items-center mt-5">
+          <img onClick={goToGithub} src="https://img.icons8.com/bubbles/60/000000/github.png" alt="github" className="mx-5"/>
+          <img onClick={goToLInkedIn} src="https://img.icons8.com/bubbles/60/000000/linkedin.png" alt="linkedin" className="mx-5"/>
+        </div>
       </div>
     </div>
-
   )
 }
 

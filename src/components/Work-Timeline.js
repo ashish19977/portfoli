@@ -5,7 +5,7 @@ import ProjectCard from './Project-Card'
 
 export default function WorkTimeline() {
 return(
-  <div className="bg-black py-2 mb-7 text-gray-400 px-1" id="work">
+  <div className="bg-black py-2 text-gray-400 px-1" id="work">
     <h1 className="md:text-5xl text-3xl font-mono text-green-600 mt-5 mb-8 text-center">Works and Projects</h1>
 
     <div className='mb-7 mt-3 md:w-10/12 mx-auto'>
