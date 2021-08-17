@@ -12,7 +12,7 @@ return(
       {
         content.work.map(work => 
         <div className='flex items-center md:justify-start justify-between px-1' key={work.date}>
-          <span className='md:text-2xl text-green-600'>{work.date}</span> 
+          <span className={work.isCurrent && 'text-green-600'}>{work.date}</span> 
           <span className='mx-3'>{work.postion}</span>
           <a href={work.link}><span className="text-blue-500 underline text-sm">@{work.company}</span></a>
         </div>            

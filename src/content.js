@@ -104,7 +104,8 @@ export const content = {
     'Redis': '#3c3b9c'
   },
   work:[
-    { date: '07/2020 - 10/2020', postion: 'Intern', company: 'Phablecare', link:'https://www.phablecare.com/' },
-    { date: 'Current - ', postion: 'Software Associate', company: 'Phablecare', link:'https://www.phablecare.com/' },
+    { date: 'Current - ', isCurrent: true, postion: 'Software Developer', company: 'Times Internet', link:'https://gaana.com/' },    
+    { date: '10/2020 - 7/2021', isCurrent: false, postion: 'Software Associate', company: 'Phablecare', link:'https://www.phablecare.com/' },
+    { date: '07/2020 - 10/2020', isCurrent: false, postion: 'Intern', company: 'Phablecare', link:'https://www.phablecare.com/' },
   ]
 }
