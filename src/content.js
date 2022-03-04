@@ -28,7 +28,7 @@ export const content = {
   projects:[
 {
  name: 'Todo Django',
- techUsed:['Python', 'Django', 'HTML', 'CSS'],
+ techUsed:['Python', 'Django', 'Html', 'Css'],
 
  keyPoints:[
         'A todo app built in django for creating todos.',
