@@ -112,7 +112,8 @@ export const content = {
     'React': '#2b539e',
     'React Native': '#2b539e',
     'JS': '#7f2b9e',
-    'Redis': '#3c3b9c'
+    'Redis': '#3c3b9c',
+    'Python': '#1a5276',
   },
   work:[
     { date: 'Current - ', isCurrent: true, postion: 'Software Developer', company: 'Times Internet', link:'https://gaana.com/' },    
