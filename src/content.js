@@ -114,6 +114,7 @@ export const content = {
     'JS': '#7f2b9e',
     'Redis': '#3c3b9c',
     'Python': '#1a5276',
+    'Django': '#0b5345',
   },
   work:[
     { date: 'Current - ', isCurrent: true, postion: 'Software Developer', company: 'Times Internet', link:'https://gaana.com/' },    
